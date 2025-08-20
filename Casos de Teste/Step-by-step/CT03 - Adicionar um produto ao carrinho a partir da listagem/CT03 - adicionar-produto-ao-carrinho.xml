@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project>
+    <projectId>10001</projectId>
+    <projectKey>SWAG</projectKey>
+    <exportDate>2025-08-20 12:02:23 UTC</exportDate>
+    <folders/>
+    <testCases>
+        <testCase id="255713674" key="SWAG-T3">
+            <attachments/>
+            <confluencePageLinks/>
+            <createdBy>Amanda Talita Pellin</createdBy>
+            <createdOn>2025-08-20 10:56:08 UTC</createdOn>
+            <customFields/>
+            <issues>
+                <issue>
+                    <key>SWAG-5</key>
+                    <summary><![CDATA[Adicionar Produto ao Carrinho]]></summary>
+                </issue>
+            </issues>
+            <labels/>
+            <name><![CDATA[Adicionar um produto ao carrinho a partir da listagem]]></name>
+            <objective><![CDATA[Validar que o usu&aacute;rio consegue adicionar um produto ao carrinho diretamente da listagem de produtos e que o contador e o estado do bot&atilde;o s&atilde;o atualizados.]]></objective>
+            <owner>70121:cb185341-c21f-416a-8d9a-1d8b3dcdb5e8</owner>
+            <precondition><![CDATA[<ul><li>Usu&aacute;rio com credenciais v&aacute;lidas.</li><li>Cat&aacute;logo com o produto-alvo vis&iacute;vel na listagem.</li><li>Carrinho vazio no in&iacute;cio da execu&ccedil;&atilde;o.</li></ul>]]></precondition>
+            <priority><![CDATA[High]]></priority>
+            <status><![CDATA[Draft]]></status>
+            <parameters/>
+            <testDataWrapper/>
+            <testScript type="steps">
+                <steps>
+                    <step index="0">
+                        <customFields/>
+                        <description><![CDATA[Acessar a URL e realizar login]]></description>
+                        <expectedResult><![CDATA[Autentica&ccedil;&atilde;o bem-sucedida; p&aacute;gina de listagem (cat&aacute;logo) carregada]]></expectedResult>
+                        <testData><![CDATA[​Usu&aacute;rio: <code id="isPasted">standard_user</code> / Senha: <code>secret_sauce</code>]]></testData>
+                    </step>
+                    <step index="1">
+                        <customFields/>
+                        <description><![CDATA[Localizar o produto na listagem]]></description>
+                        <expectedResult><![CDATA[Card do produto &eacute; exibido com Nome, Descri&ccedil;&atilde;o, Pre&ccedil;o, Imagem e bot&atilde;o Add to cart]]></expectedResult>
+                        <testData><![CDATA[Nome do produto: <code id="isPasted">Sauce Labs Backpack</code>]]></testData>
+                    </step>
+                    <step index="2">
+                        <customFields/>
+                        <description><![CDATA[Clicar no bot&atilde;o Add to cart do produto]]></description>
+                        <expectedResult><![CDATA[Bot&atilde;o muda para Remove (ou &quot;Remover&quot;) indicando item adicionado]]></expectedResult>
+                    </step>
+                    <step index="3">
+                        <customFields/>
+                        <description><![CDATA[Verificar contador do carrinho no topo da p&aacute;gina]]></description>
+                        <expectedResult><![CDATA[Contador do carrinho exibe 1]]></expectedResult>
+                        <testData><![CDATA[Valor esperado: 1]]></testData>
+                    </step>
+                    <step index="4">
+                        <customFields/>
+                        <description><![CDATA[Abrir o carrinho clicando no &iacute;cone correspondente]]></description>
+                        <expectedResult><![CDATA[P&aacute;gina do carrinho &eacute; exibida sem erros]]></expectedResult>
+                    </step>
+                    <step index="5">
+                        <customFields/>
+                        <description><![CDATA[Validar item no carrinho]]></description>
+                        <expectedResult><![CDATA[Produto listado no carrinho com nome correto, quantidade 1 e pre&ccedil;o vis&iacute;vel]]></expectedResult>
+                        <testData><![CDATA[Produto: <code id="isPasted">Sauce Labs Backpack</code>; Quantidade: <code>1</code>]]></testData>
+                    </step>
+                    <step index="6">
+                        <customFields/>
+                        <description><![CDATA[Validar persist&ecirc;ncia ao navegar/atualizar]]></description>
+                        <expectedResult><![CDATA[Item permanece no carrinho e contador mant&eacute;m o valor 1]]></expectedResult>
+                        <testData><![CDATA[Recarregar p&aacute;gina ou voltar ao cat&aacute;logo]]></testData>
+                    </step>
+                </steps>
+            </testScript>
+        </testCase>
+    </testCases>
+</project>

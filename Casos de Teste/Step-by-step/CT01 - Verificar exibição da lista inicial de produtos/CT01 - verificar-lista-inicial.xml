@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project>
+    <projectId>10001</projectId>
+    <projectKey>SWAG</projectKey>
+    <exportDate>2025-08-20 11:41:11 UTC</exportDate>
+    <folders/>
+    <testCases>
+        <testCase id="255624711" key="SWAG-T1">
+            <attachments/>
+            <confluencePageLinks/>
+            <createdBy>Amanda Talita Pellin</createdBy>
+            <createdOn>2025-08-19 14:51:05 UTC</createdOn>
+            <customFields/>
+            <issues>
+                <issue>
+                    <key>SWAG-3</key>
+                    <summary><![CDATA[Explorar Catálogo de Produtos]]></summary>
+                </issue>
+            </issues>
+            <labels/>
+            <name><![CDATA[Verificar exibição da lista inicial de produtos ]]></name>
+            <objective><![CDATA[O usu&aacute;rio deve conseguir visualizar a lista inicial de produtos e explor&aacute;-la.]]></objective>
+            <owner>70121:cb185341-c21f-416a-8d9a-1d8b3dcdb5e8</owner>
+            <precondition><![CDATA[<ul><li id="isPasted"><p>Usu&aacute;rio autenticado com credenciais v&aacute;lidas (ex.: <code>standard_user / secret_sauce</code>).</p></li><li><p>Cat&aacute;logo com ao menos 1 produto ativo.</p></li></ul>]]></precondition>
+            <priority><![CDATA[High]]></priority>
+            <status><![CDATA[Draft]]></status>
+            <parameters/>
+            <testDataWrapper/>
+            <testScript type="steps">
+                <steps>
+                    <step index="0">
+                        <customFields/>
+                        <description><![CDATA[Acessar a URL da loja e realizar login (se necess&aacute;rio)]]></description>
+                        <expectedResult><![CDATA[Usu&aacute;rio autenticado; p&aacute;gina principal carregada (cat&aacute;logo acess&iacute;vel)]]></expectedResult>
+                        <testData><![CDATA[Usu&aacute;rio v&aacute;lido, Senha v&aacute;lida.]]></testData>
+                    </step>
+                    <step index="1">
+                        <customFields/>
+                        <description><![CDATA[Abrir cat&aacute;logo de produtos]]></description>
+                        <expectedResult><![CDATA[A p&aacute;gina do cat&aacute;logo &eacute; exibida sem erros]]></expectedResult>
+                        <testData><![CDATA[URL: /inventory.html]]></testData>
+                    </step>
+                    <step index="2">
+                        <customFields/>
+                        <description><![CDATA[Verificar lista inicial]]></description>
+                        <expectedResult><![CDATA[A lista cont&eacute;m produtos vis&iacute;veis]]></expectedResult>
+                        <testData><![CDATA[Produtos cadastrados no ambiente]]></testData>
+                    </step>
+                    <step index="3">
+                        <customFields/>
+                        <description><![CDATA[Validar elementos por item]]></description>
+                        <expectedResult><![CDATA[Cada card/linha de produto exibe Nome, Descri&ccedil;&atilde;o, Pre&ccedil;o, Imagem e bot&atilde;o &quot;Add to cart&quot;]]></expectedResult>
+                        <testData><![CDATA[Nome, Descri&ccedil;&atilde;o, Pre&ccedil;o, Imagem, Bot&atilde;o]]></testData>
+                    </step>
+                    <step index="4">
+                        <customFields/>
+                        <description><![CDATA[Verificar controles da p&aacute;gina]]></description>
+                        <expectedResult><![CDATA[Controles vis&iacute;veis e funcionais]]></expectedResult>
+                        <testData><![CDATA[Op&ccedil;&atilde;o de ordena&ccedil;&atilde;o: &ldquo;Pre&ccedil;o (low to high)&rdquo;]]></testData>
+                    </step>
+                    <step index="5">
+                        <customFields/>
+                        <description><![CDATA[Checar estado inicial do carrinho]]></description>
+                        <expectedResult><![CDATA[Contador do carrinho n&atilde;o exibe itens antes de adicionar (Contador exibe &quot;0&quot; ou vazio)]]></expectedResult>
+                        <testData><![CDATA[Nenhum produto adicionado]]></testData>
+                    </step>
+                </steps>
+            </testScript>
+        </testCase>
+    </testCases>
+</project>
